@@ -1,8 +1,24 @@
 <?php include('server.php');
+ require('user_validator.php');
+ 
+// require_once ('classes/singleton.php');
+//
+// $users = singleton::getInstance()->query('SELECT * from users');
+//    if($users->count()){
+//        foreach($users->results() as $user){
+//            echo $user->username, '<br>';
+//        }
+//    }
 
+
+
+
+    
     if(empty($_SESSION['username'])){
         header('location: login.php');
     }
+    
+    
 ?>
 <html>
     <head>

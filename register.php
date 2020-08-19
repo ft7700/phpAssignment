@@ -1,6 +1,25 @@
-<?php include('server.php'); ?>
-<!DOCTYPE html>
+<?php include('server.php'); 
 
+require('user_validator.php');
+
+if(isset($_POST['register'])){
+    // validate entries
+    $validation = new user_validator($_POST);
+    $errors = $validation->validateForm();
+
+    $username = $db-> real_escape_string($_POST['username']);
+    $email = $db-> real_escape_string($_POST['email']);
+    $password = $db-> real_escape_string($_POST['password']);
+    $password_2 = $db-> real_escape_string($_POST['password_2']);
+    
+    if(count($errors) == 0){
+      $password = md5($password);
+      $sql = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";     
+      mysqli_query($db, $sql);
+      }
+    }
+    
+?>
 <html>
     <head>
         <title>User Registration system</title>

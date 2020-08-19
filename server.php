@@ -1,9 +1,13 @@
 <?php
 
+ 
+ 
+    
 session_start();
 $username = "";
 $email = "";
 $errors = array();
+
 
 $db = mysqli_connect('localhost','root','','registration');
         
@@ -19,44 +23,58 @@ $db = mysqli_connect('localhost','root','','registration');
           $res_u = mysqli_query($db, $sql_u) or die(mysqli_error($db));
           $res_e = mysqli_query($db, $sql_e) or die(mysqli_error($db));
           
-    $namefields = '/[a-zA-Z0-9]/';
-
+    
+         
+          
+//    $uppercase = preg_match('@[A-Z]@', $password);
+//    $lowercase = preg_match('@[a-z]@', $password);
+//    $number    = preg_match('@[0-9]@', $password);
+//    $specialChars = preg_match('@[^\w]@', $password);
     
 
+//    if(empty($username)){
+//        array_push($errors, "Username is required");
+//    }
+//    else if(!preg_match('/^[a-zA-Z0-9]{5,}$/', $username)) { 
+//    array_push($errors, "Username should be at least 5 characters in length and should include only alphanumeric character.");
+//    }
+//    else if(mysqli_num_rows($res_u) > 0){
+//         array_push($errors, "Sorry..Username already taken");
+//    }
+//   
+//    
+//    
+//    if(empty($email)){
+//        array_push($errors, "Email is required");
+//    }else if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//      if(mysqli_num_rows($res_e) > 0){
+//         array_push($errors, "Sorry..Email already taken");
+//    }
+//   }else{
+//      array_push($errors, "Email is invalid");
+//   }
+//   
     
-    if(empty($username)){
-        array_push($errors, "Username is required");
-    }
-    else if(mysqli_num_rows($res_u) > 0){
-         array_push($errors, "Sorry..Username already taken");
-    }
-   
+
+//    if(empty($password)){
+//        array_push($errors, "Password is required");
+//        
+//    }else if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+//    array_push($errors, "Password should be at least 8 characters in length and should include at least 1 upper case letter,1 number and 1 special character.");
+//    }
+
     
-    
-    if(empty($email)){
-        array_push($errors, "Email is required");
-    }else if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      if(mysqli_num_rows($res_e) > 0){
-         array_push($errors, "Sorry..Email already taken");
-    }
-   }else{
-      array_push($errors, "Email is invalid");
-   }
-   
-    if(empty($password)){
-        array_push($errors, "Password is required");
-    }
-    if($password != $password_2){
-        array_push($errors, "The two passwords do not match");
-    }
-    
-    if(count($errors) == 0){
-        $password = md5($password);
-        $sql = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";     
-        mysqli_query($db, $sql);
-        
-        
-    }
+//    if($password != $password_2){
+//        array_push($errors, "The two passwords do not match");
+//    }
+//   
+//   if(count($errors) == 0){
+//       $password = md5($password);
+//      $sql = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";     
+//      mysqli_query($db, $sql);
+//      
+//       
+//    }
 }
 
     if(isset($_POST['login'])){
