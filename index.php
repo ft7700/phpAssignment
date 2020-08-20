@@ -1,5 +1,31 @@
 <?php include('server.php');
+// require_once ('DBConn.php');
+// 
+// $users = DBConn::getInstance()->query('SELECT * FROM users');
+// if($users->count()){
+//     foreach($users->results() as $user){
+//         echo $user->name, '<br>';
+//     }
+// }
+ require_once ('DBConn.php');
+ $db = DBConn::getInstance();
+    $mysqli = $db->getConnection(); 
+    $sql_query = "SELECT * FROM users";
+    $result = $mysqli->query($sql_query);
 
+    
+         
+ 
+// $users = 
+//         DBConn::getInstance()->query('SELECT * FROM users');
+//         DBConn::getInstance()->query('SELECT * FROM users');
+//         DBConn::getInstance()->query('SELECT * FROM users');
+         
+// if($users->count()){
+//     foreach($users->results() as $user){
+//         echo $user->name, '<br>';
+//     }
+// }
     if(empty($_SESSION['username'])){
         header('location: login.php');
     }
