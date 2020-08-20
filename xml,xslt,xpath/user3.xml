@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="userDisplay3.xsl"?>
+<profile>
+  <user age="20">
+    <id>1</id>
+    <username>tommy123</username>
+    <email>tom@gmail.com</email>
+  </user>
+  <user age="33">
+    <id>2</id>
+    <username>bennard888</username>
+    <email>bennard@gmail.com</email>
+  </user>
+  <user age="18">
+    <id>3</id>
+    <username>johnny123</username>
+    <email>john@gmail.com</email>
+  </user>
+</profile>
+  
