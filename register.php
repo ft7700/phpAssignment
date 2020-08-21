@@ -41,7 +41,7 @@ $errors = [];
 
 <html>
     <head>
-        <title>User Registration system</title>
+        <title>999 Mobile phone & Accessories system</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>

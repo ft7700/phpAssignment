@@ -2,10 +2,17 @@
 
 session_start();
 $username = "";
+$passwd = "";
 $email = "";
 $errors = array();
 
 $db = mysqli_connect('localhost','root','','registration');
+         require_once ('DBConn.php');
+        //$db = DBConn::getInstance();
+//        $username = trim($_POST['username']);
+//        $passwd = sha1(trim($_POST['password']));
+        
+        //$authUser = $db->retrieveUser($username, $passwd);
         
     if(isset($_POST['register'])){
  
