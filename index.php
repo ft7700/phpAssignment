@@ -14,29 +14,56 @@
         header('location: login.php');
     }
     
-    $mysqli = $db->getConnection(); 
-    $sql_query = "SELECT * FROM users";
+    
     
     //$result = $mysqli->query($sql_query);   
     //$user = mysqli_fetch_assoc($result);
    // print_r($user);
     
-    $sql_query2 = "SELECT * FROM users where username= 'bennard888'";
-    $result2 = $mysqli->query($sql_query2);
+    
+    //$result2 = $mysqli->query($sql_query2);
 //    $user2 = mysqli_fetch_assoc($result2);
 //    print_r($user2);
    
     //$result = mysqli_query($con, 'SELECT ...');
+    $mysqli = $db->getConnection(); 
+   $sql_query = "SELECT * FROM users";
     $result = $mysqli->query($sql_query); 
     
+    $sql_query2 = "SELECT * FROM users where username= 'bennard888'";
+    
     //if ($result === mysqli_query($db, "SELECT * FROM users WHERE username= bennard888")) {
-    foreach($result as $row) {
+    if($_SESSION['username'] == 'admin123'){
+        foreach($result as $row) {
+        
     print_r($row);
     echo '<br>';
     }
+    }
+    
+    
     // do something with each row
-
+//    while($row=mysqli_fetch_array($result))//while look to fetch the result and store in a array $row.  
+//        {  
+//            $user_id=$row[0];  
+//            $user_name=$row[1];  
+//            $user_email=$row[2];  
+//            $user_pass=$row[3];  
+//            
+//            
+//               
+//            
+//            
+//            echo $user_name;
+//            echo $user_email;
+//            echo $user_pass;
+//            
+//        }
+        
+    
 ?>
+
+
 <html>
     <head>
         <title>999 Mobile phone & Accessories system</title>
@@ -61,6 +88,7 @@
             
             <?php if(isset($_SESSION['username'])): ?>
             <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+            <p><a href="register.php? style="color: darkblue;">Next</a></p>
             <p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
             <?php endif ?>
         </div>

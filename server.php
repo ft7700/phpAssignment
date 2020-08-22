@@ -8,6 +8,8 @@ $errors = array();
 
 $db = mysqli_connect('localhost','root','','registration');
          require_once ('DBConn.php');
+         
+    
         //$db = DBConn::getInstance();
 //        $username = trim($_POST['username']);
 //        $passwd = sha1(trim($_POST['password']));
@@ -86,6 +88,7 @@ $db = mysqli_connect('localhost','root','','registration');
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
             header('location: index.php');
+            
         }else{
             array_push($errors, "wrong username/password combination");
         }

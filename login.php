@@ -1,6 +1,6 @@
 <?php include('server.php'); 
 
-require_once 'DB.php';
+
 ?>
 
 <!--<html>
