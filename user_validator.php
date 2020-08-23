@@ -27,7 +27,7 @@ class user_validator {
     $this->validateEmail();
     $this->validatePassword();
     $this->validateSamePassword();
-    
+    //$this->checkWhiteSpace();
     return $this->errors;
 
   }
@@ -38,14 +38,18 @@ class user_validator {
     
     if(empty($val)){
       $this->addError('username', 'username cannot be empty');
-    } else {
+    } 
+   else {
       if(!preg_match('/^\S[a-zA-Z0-9]{5,12}$/', $val)){
         $this->addError('username','username must be 5-12 chars & alphanumeric');
+        
       }
       
     }
 
   }
+  
+
 
   private function validateEmail(){
 
@@ -92,12 +96,12 @@ class user_validator {
 //      $val = trim($this->data['username']);
 //      $val2 = trim($this->data['email']);
 //      
-//      if (!ctype_space($val)) { 
+//      if (ctype_space($val)) { 
 //          $this->addError('username', 'The username contains whitespace characters.'); 
 //        
 //      }
 //      
-//      if (!ctype_space($val2)) { 
+//      if (ctype_space($val2)) { 
 //          $this->addError('email', 'The email contains whitespace characters.'); 
 //      }
 //  }

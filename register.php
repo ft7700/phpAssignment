@@ -32,7 +32,7 @@ $errors = [];
       $password = md5($password);
       $sql = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";     
       mysqli_query($db, $sql);
-
+      echo 'Registered successfully!';
     }
     
   }

@@ -10,11 +10,7 @@ class DBConn {
     private $_username = "root";
     private $_password = "";
     private $_database = "registration";
-    /*
-    Get an instance of the Database
-    @return Instance
-    */
-    //$db = mysqli_connect('localhost','root','','registration');
+   
     
     public static function getInstance() {
         if(!self::$_instance) { // If no instance then make one
@@ -43,7 +39,7 @@ class DBConn {
     }
     // Magic method clone is empty to prevent duplication of connection
     private function __clone() { }
-    // Get mysqli connection
+    
     
 
 //    public function retrieveUser($username, $passwd){
@@ -67,93 +63,3 @@ class DBConn {
 }
 ?>
 
-<!--//class DBConn{
-//    private $_mysqli,
-//            $_query,
-//            $_results = array(),
-//            $_count = 0;
-//    
-//    public static $instance; 
-//    
-//    public static function getInstance(){
-//        if(!isset(self::$instance)){
-//            self::$instance = new DBConn();
-//        }
-//        return self::$instance;
-//    }
-//    
-//    public function _construct(){
-//       $this->_mysqli = new mysqli('localhost','root','','registration');
-////        $this = mysqli_connect('localhost','root','','registration');
-//        if($this->_mysqli->connect_error){
-//            die($this->_mysqli->connect_error);
-//        }
-//    }
-//    
-//    public function query($sql){
-//        if($this->_query === $this->_mysqli->query($sql)){
-//            while($row = $this->_query->fetch_object()){
-//                $this->_results[] =$row;
-//            }
-//            $this->_count = $this->_query->num_rows;
-//        }
-//        return $this;
-//    }
-//    
-//    public function results(){
-//        return $this->_results;
-//    }
-//    
-//    public function count(){
-//        return $this->_count;
-//    }
-//}
-
-class DBConn{
-    private $_mysqli,
-            $_query,
-            $_results = array(),
-            $_count = 0;
-    
-    public static $instance;
-    
-    public static function getInstance(){
-        if(!isset(self::$instance)){
-            
-            self::$instance = new DBConn();
-            echo 'gay';
-        }
-        return self::$instance;
-    }
-    
-    
-    public function _construct(){
-//       $this->_mysqli = new mysqli('localhost','root','','');
-
-//        if($this->_mysqli->connect_error){
-//            die($this->_mysqli->connect_error);
-//        }
-        echo 'connect to db';
-    }
-    
-    public function query($sql){
-//        if($this->_query === $this->_mysqli->query($sql)){
-//            while($row = $this->_query->fetch_object()){
-//                $this->_results[] =$row;
-//            }
-//            $this->_count = $this->_query->num_rows;
-//        }
-//        return $this;
-        echo 'query';
-    }
-    
-//    public function results(){
-//        return $this->_results;
-//    }
-//    
-//    public function count(){
-//        return $this->_count;
-//    }
-    
-    
-}-->

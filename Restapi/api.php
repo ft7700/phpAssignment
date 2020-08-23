@@ -1,25 +1,5 @@
 <?php
 
-
-
-//$info ="";
-//$data ="";
-//
-//$db = mysqli_connect('localhost','root','','registration');
-//$sql_query = "SELECT * FROM users";
-//
-//if(isset($_POST)){
-//    $info ="Data is fetched successfully";
-//    $data=$_POST;
-//}else{
-//    $info ="Data is not fetched successfully";
-//    $data="No data found";
-//}
-//
-//$result['data']=$data;
-//$result['info']=$info;
-//echo json_encode([$result]);
-
 $con= mysqli_connect('localhost','root','','registration');
 $response = array();
 
