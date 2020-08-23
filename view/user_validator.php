@@ -8,32 +8,27 @@ class user_validator {
   private $errors = [];
   private static $fields = ['username', 'email','password','password_2'];
 
-  
-  
   public function __construct($post_data){
     $this->data = $post_data;
   }
 
   public function validateForm(){
-
     foreach(self::$fields as $field){
       if(!array_key_exists($field, $this->data)){
         trigger_error("'$field' is not present in the data");
         return;
       }
     }
-
+    
     $this->validateUsername();
     $this->validateEmail();
     $this->validatePassword();
     $this->validateSamePassword();
-    //$this->checkWhiteSpace();
+    
     return $this->errors;
-
   }
 
   private function validateUsername(){
-
     $val = trim($this->data['username']);
     
     if(empty($val)){
@@ -49,8 +44,6 @@ class user_validator {
 
   }
   
-
-
   private function validateEmail(){
 
     $val = trim($this->data['email']);
@@ -67,7 +60,6 @@ class user_validator {
   }
   
   private function validatePassword(){
-
     $val = trim($this->data['password']);
     
     if(empty($val)){
@@ -80,8 +72,7 @@ class user_validator {
     }
 
   }
-  
-  
+   
   private function validateSamePassword(){
       
       $val = trim($this->data['password']);
@@ -92,26 +83,10 @@ class user_validator {
     }
   }
   
-//  private function checkWhiteSpace(){
-//      $val = trim($this->data['username']);
-//      $val2 = trim($this->data['email']);
-//      
-//      if (ctype_space($val)) { 
-//          $this->addError('username', 'The username contains whitespace characters.'); 
-//        
-//      }
-//      
-//      if (ctype_space($val2)) { 
-//          $this->addError('email', 'The email contains whitespace characters.'); 
-//      }
-//  }
-  
-  
-
   private function addError($key, $val){
     $this->errors[$key] = $val;
   }
 
-}
+  }
 
 ?>
