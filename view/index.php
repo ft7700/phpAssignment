@@ -14,8 +14,7 @@
     if(empty($_SESSION['username'])){
         header('location: login.php');
     }
-    
-    
+      
     $mysqli = $db->getConnection(); 
     $sql_query = "SELECT * FROM users";
     $result = $mysqli->query($sql_query); 
