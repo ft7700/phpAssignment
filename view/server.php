@@ -1,3 +1,7 @@
+<!--
+  *server webpage
+  *@author Francis Tan Eng Yee
+*-->
 <?php
 
 session_start();
@@ -9,7 +13,7 @@ $update = false;
 $errors = array();
 
 $db = mysqli_connect('localhost','root','','registration');
-         require_once ('DBConn.php');
+         require_once ('../controller/DBConn.php');
          
     
 

@@ -1,8 +1,11 @@
+<!--
+  *DBConn singleton
+  *@author Francis Tan Eng Yee
+  *Singleton
+  *Mysql database class - only one connection alowed
+*-->
 <?php
- 
-/*
-* Mysql database class - only one connection alowed
-*/
+
 class DBConn {  
     private $_connection;
     private static $_instance; //The single instance

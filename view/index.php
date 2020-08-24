@@ -1,10 +1,14 @@
+<!--
+  *index webpage
+  *@author Francis Tan Eng Yee
+*-->
 <?php include('server.php');
-
+    
     $id = 0;
     $username ="";
     $email ="";
     
-    require_once ('DBConn.php');
+    require_once ('../controller/DBConn.php');
     $db = DBConn::getInstance();
    
     if(empty($_SESSION['username'])){
@@ -60,10 +64,11 @@
             
             <?php if(isset($_SESSION['username'])): ?>
             <p style="text-align: center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-            <p><a href="register.php? style="color: darkblue;">Next</a></p>
+            <p><a href="item.php? style="color: darkblue;">Next</a></p>
             <p><a href="edit.php?" style="color: darkblue;">Edit</a></p>
+            <p><a href="../xml,xslt,xpath/showList.php?" style="color: darkblue;">Show XML</a></p>
             <p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
-             
+            
             <?php endif ?>
         </div>
         

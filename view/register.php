@@ -1,12 +1,14 @@
+<!--
+  *register webpage
+  *@author Francis Tan Eng Yee
+*-->
 <?php include('server.php'); 
-require('user_validator.php');
-
-
+require('../controller/user_validator.php');
 
 $errors = [];
 
   $db = mysqli_connect('localhost','root','','registration');
-  
+ 
   if(isset($_POST['register'])){
     // validate entries
     $validation = new user_validator($_POST);
@@ -50,7 +52,7 @@ $errors = [];
         </div>
         
         <form method="post" action="register.php">
-            <?php include ('errors.php'); ?> 
+            <?php include ('../controller/errors.php'); ?> 
             <div class="input-group">   
                 <label>Username</label>
                 <input type="text" name="username" value="<?php echo $username; ?>">
