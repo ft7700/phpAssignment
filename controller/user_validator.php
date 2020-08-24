@@ -1,3 +1,7 @@
+<!--
+  *input validation - user_validator
+  *@author Francis Tan Eng Yee
+*-->
 <?php 
 
 class user_validator {

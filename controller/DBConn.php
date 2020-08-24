@@ -1,6 +1,10 @@
 <?php
  
 /*
+ * <!--
+  *Singleton design pattern - DBConn
+  *@author Francis Tan Eng Yee
+*-->
 * Mysql database class - only one connection alowed
 */
 class DBConn {  
