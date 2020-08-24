@@ -1,5 +1,4 @@
 <?php
- 
 /*
  * <!--
   *Singleton design pattern - DBConn

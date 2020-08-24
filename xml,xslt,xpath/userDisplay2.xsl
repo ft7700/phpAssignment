@@ -10,7 +10,7 @@
       <body>
         <h1>Number of Users</h1>
         <p>
-          I have <xsl:value-of select="count(//user)"/> Users
+          We have <xsl:value-of select="count(//user)"/> Users
         </p>        
       </body>
     </html>
